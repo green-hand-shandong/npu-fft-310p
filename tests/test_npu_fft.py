@@ -15,7 +15,7 @@ import torch
 DEV = "npu:0" if torch.npu.is_available() else "cpu"
 print(f"device = {DEV}")
 
-import npu_fft
+import npu_fft  # noqa: E402  (must import after torch/DEV setup)
 
 
 def ref_cpu(fn, x, *a, **k):
